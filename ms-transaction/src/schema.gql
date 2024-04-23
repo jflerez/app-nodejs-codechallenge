@@ -1,0 +1,25 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CommonResponse {
+  message: String
+  success: Boolean!
+}
+
+type Query {
+  """Query que permite obtener una transacion."""
+  transactionFind(transactionExternalId: String!): CommonResponse!
+}
+
+type Mutation {
+  """Mutacion que permite crear una transacion."""
+  transactionCreate(createTransactionInput: CreateTransactionInput!): CommonResponse!
+}
+
+input CreateTransactionInput {
+  accountExternalIdDebit: String!
+  accountExternalIdCredit: String!
+  tranferTypeId: Int!
+  value: Int!
+}
